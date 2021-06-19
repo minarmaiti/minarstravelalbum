@@ -1,0 +1,101 @@
+<!-- <div style="background-color: black;">
+    <img src="assets/logos/album-logo.svg">
+</div> -->
+<div class="loader" *ngIf="noOfImageLoading > 0">
+    <div class="loader-icon">
+        <img src="assets/logos/album-logo.svg" style="width: 100%;">
+    </div>
+</div>
+<div class="top-bannar">
+    <div class="cover">
+        <div class="headerspace"></div>
+        <div class="details">
+            <div class="detail-head">
+                Welcome to My Digital Album
+            </div>
+            <div class="detail-body">
+                Here I am going to share all my digital memories I have collected from travelling different 
+                places throughout the world.
+            </div>
+            <div class="detail-body">
+                I have recently visited kinnur district of Himachal Pradesh, India. To check my recent album 
+                please click the bellow link.
+            </div>
+            <div class="button" routerLink = "himachal-kinnur-2021">
+                Latest Album
+            </div>
+            <!-- <div class="button">
+                Other Album
+            </div> -->
+        </div>
+    </div>
+</div>
+<div class="body-items">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="body-header">
+                My Latest Albums
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-3 col-lg-4 col-sm-6" *ngFor="let recent of recentAlbum">
+            <div class="img-block"  [routerLink] = [recent.routerLink]>
+                <img  [src]="'assets/images/'+recent.image" (load)="onLoad()" [alt]="recent.image" width="100%">
+                <div class="img-cover">
+                   
+                    <div class="details-img">
+                        <div class="details-img-head">{{recent.albumName}}</div>
+                        <div class="details-img-test">{{recent.albumDetails}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h4 class="body-header">
+                Other Albums from my international trip
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-3 col-lg-4 col-sm-6" *ngFor="let recent of internationalAlbum">
+            <div class="img-block"  [routerLink] = [recent.routerLink]>
+                <img  [src]="'assets/images/'+recent.image" (load)="onLoad()" [alt]="recent.image" width="100%">
+                <div class="img-cover">
+                   
+                    <div class="details-img">
+                        <div class="details-img-head">{{recent.albumName}}</div>
+                        <div class="details-img-test">{{recent.albumDetails}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- <div class="row">
+        <div class="col-12">
+            <h4 class="body-header">
+                Other Albums from India
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3" *ngFor="let recent of indiaAlbum ">
+            <div class="img-block"  [routerLink] = [recent.routerLink]>
+                <img  [src]="'assets/images/'+recent.image" [alt]="recent.image" width="100%">
+                <div class="img-cover">
+                   
+                    <div class="details-img">
+                        <div class="details-img-head">{{recent.albumName}}</div>
+                        <div class="details-img-test">{{recent.albumDetails}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div> -->
+    
+
+</div>

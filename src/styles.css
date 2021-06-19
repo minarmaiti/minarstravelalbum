@@ -1,0 +1,251 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Open Sans';
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.root{
+    min-height: 100%;
+    position: relative;
+    background-color: #c5c5c5;
+    padding-bottom: 4em;
+    background-color: rgb(10, 10, 10);
+}
+
+.head-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: .5em;
+    background-color: rgba(0, 0, 0, 0.65);
+    height: 4.5em;
+    z-index: 150;
+}
+
+.menulist {
+    float: right;
+    margin: .5em 1.5em;
+}
+.menu {
+    color: #e6e6e6;
+    font-size: 1.2em;
+    margin: .1em ;
+    padding: .15em .5em;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    height: 3em;
+}
+
+.menu-details {
+    position: absolute;
+    top: 2.8em;
+    background-color: #cfcfcf;
+    border: 1px solid #9c9c9c;
+    font-size: 1em;
+    color: #3d3d3d;
+    display: none;
+    padding: .5em;
+}
+
+.menu:hover> .menu-details{
+    display: block;
+}
+
+.menu:hover{
+    color: #fdfdfd;
+    text-decoration: underline;
+}
+
+.menu-list-items {
+    width: 12em;
+    padding: .3em .5em; 
+}
+
+.menu-list-items-right {
+    right: 0;
+}
+
+.menu-list-items:hover {
+    background-color: rgba(0, 0, 0,.15);
+}
+
+.border-buttom {
+    border-bottom: 1px solid #afafaf;
+}
+
+.img-block {
+    margin: .5em;
+    cursor: pointer;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    /* background-image:  url("./assets/images/img-viet-1.jpg"); */
+    /* background-position: center;
+    background-size: cover; */
+    border: 2px solid rgba(190, 190, 190, 0.5);
+}
+
+.img-cover{
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, .15));
+    height: 100%;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.img-cover:hover {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, .35));
+}
+
+.details-img {
+    width:100%;
+    padding: 1.2em;
+    color: #fafafa;
+    position: absolute;
+    bottom: 0;
+}
+
+.details-img-head {
+    margin: auto;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.details-img-test {
+    margin: auto;
+    text-align: center;
+    font-weight: normal;
+    font-size: .85em;
+    color: #cecece;
+    text-align: center;
+    padding: .2em;
+    transition: all 1s ease-out;
+    display: none;
+}
+
+.img-cover:hover .details-img-test{
+    display: block;
+  }
+
+.foot-bar{
+    height: 3.5em;
+    width: 100%;
+    padding: .8em 1.5em;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icons {
+    margin: .1em .5em;
+}
+
+.body-header{
+    text-align: center;
+    margin-top: 1em;
+    color: #dfdfdf;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.copy {
+    font-size: 1.25em;
+    color: #b3b3b3;
+    margin: .1em .1em .1em 1.5em;
+}
+
+.album-block {
+    padding: 5em 2em 1em;
+}
+
+.router-active {
+    color: #fdfdfd;
+    text-decoration: underline;
+    background-color: rgba(250, 250, 250, .5);
+}
+
+.menu-sm {
+    position: absolute;
+    top: 3em;
+    right: 0em;
+    background-color: #cfcfcf;
+    border: 1px solid #9c9c9c;
+    font-size: 1.5em;
+    color: #3d3d3d;
+    /* padding: .5em; */
+    width: 15em;
+}
+
+.menu-items-sm {
+    padding: .3em 0em;
+    /* border-bottom: 1px solid #afafaf; */
+}
+
+.menu-list-items-sm {
+    padding: .3em 2em;
+    color: #fafafa;
+    font-size: .8em;
+}
+
+.menu-text-sm {
+    margin-left: 1em;
+}
+
+.menu-details-sm {
+    background-color: #636363;
+}
+
+.loader {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+}
+
+.loader-icon {
+    margin: auto;
+    animation: load 1s linear infinite;
+}
+
+@keyframes load {
+    0% {
+        width: 200px;
+     }
+     50% {
+        width: 250px;
+     }
+    100% {
+        width: 200px;
+     }
+  }
+
+@media screen and (max-width: 767px) {
+    .details-img-test{
+        display: block;
+        font-size: .8em;
+      }
+      .details-img-head{
+        font-size: 1.1em;
+      }
+    .img-cover {
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, .25));
+    }
+    
+  }

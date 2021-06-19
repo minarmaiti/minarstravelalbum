@@ -1,0 +1,138 @@
+<div class="root" (click)="hideMenu()">
+<header>
+    <div class="head-bar">
+        <img src="assets/logos/album-logo.svg" width="175px" style="cursor: pointer;" routerLink="/">
+        <!-- <app-logo></app-logo> -->
+        <div class="menulist d-none d-md-block">
+            <div class="menu" routerLink="/">
+                Home
+            </div>
+            <div class="menu">
+                India
+                <div class="menu-details">
+                    <div class="menu-list-items border-buttom" routerLink = "himachal-kinnur-2021">
+                        Kinnur, Himachal Pradesh
+                    </div>
+                    <div class="menu-list-items " routerLink = "rajasthan-2021">
+                        Rajasthan
+                    </div>
+                    <!-- <div class="menu-list-items border-buttom">
+                        West Sikkim
+                    </div>
+                    <div class="menu-list-items">
+                        Gangotri, Uttarakhand
+                    </div> -->
+                </div>
+            </div>
+            <div class="menu">
+                Europe
+                <div class="menu-details">
+                    <div class="menu-list-items border-buttom" routerLink = "russia">
+                        Russia
+                    </div>
+                    <div class="menu-list-items" routerLink = "armenia">
+                        Armenia
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                Asia
+                <div class="menu-details menu-list-items-right">
+                    <div class="menu-list-items border-buttom" routerLink = "south-vietnam-2020">
+                        South Vietnam
+                    </div>
+                    <div class="menu-list-items border-buttom" routerLink = "laos-2019">
+                        Laos
+                    </div>
+                    <div class="menu-list-items" routerLink = "thailand">
+                        Thailand
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                Africa
+                <div class="menu-details menu-list-items-right">
+                    <div class="menu-list-items " routerLink = "seychelles">
+                        Seychelles
+                    </div>
+                </div>
+            </div>
+            <div class="menu" routerLink = "about-me">
+                About me
+            </div>
+            <!-- <div class="menu">
+                Connect with me
+            </div> -->
+            <!-- <div class="menu">
+                <input type="text" style="height: 2em;">&nbsp;<span>Search</span>
+            </div> -->
+        </div>
+        <div class="menulist d-block d-md-none" (click) = "stopPropagetion($event)">
+            <img src="assets/logos/list.svg" width="40px" (click) = "showMenu()">
+            <div class="menu-sm" *ngIf="menuvisible">
+                <div class="menu-items-sm border-buttom" routerLink="/" (click)="hideMenu()">
+                    <div class="menu-text-sm">Home </div>
+                </div>
+                <div class="menu-items-sm border-buttom">
+                    <div class="menu-text-sm" (click)="manuselected('in')">India </div>
+                    <div class="menu-details-sm" *ngIf = "selectedMenu == 'in'">
+                        <div class="menu-list-items-sm border-buttom" routerLink = "himachal-kinnur-2021" (click)="hideMenu()">
+                            Kinnur, Himachal Pradesh
+                        </div>
+                        <div class="menu-list-items-sm "  routerLink = "rajasthan-2021" (click)="hideMenu()">
+                            Rajasthan
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-items-sm border-buttom" (click)="manuselected('eu')">
+                    <div class="menu-text-sm">Europe</div>
+                    <div class="menu-details-sm" *ngIf = "selectedMenu == 'eu'">
+                        <div class="menu-list-items-sm border-buttom" routerLink = "russia" (click)="hideMenu()">
+                            Russia
+                        </div>
+                        <div class="menu-list-items-sm " routerLink = "armenia" (click)="hideMenu()">
+                            Armenia
+                        </div>
+                    </div> 
+                </div>
+                <div class="menu-items-sm border-buttom" (click)="manuselected('as')">
+                    <div class="menu-text-sm">Asia</div>
+                    <div class="menu-details-sm" *ngIf = "selectedMenu == 'as'">
+                        <div class="menu-list-items-sm border-buttom" routerLink = "south-vietnam-2020" (click)="hideMenu()">
+                           South Vietnam
+                        </div>
+                        <div class="menu-list-items-sm border-buttom" routerLink = "laos-2019" (click)="hideMenu()">
+                            Laos
+                        </div>
+                        <div class="menu-list-items-sm" routerLink = "thailand" (click)="hideMenu()">
+                            Thailand
+                        </div>
+                    </div> 
+                </div>
+                <div class="menu-items-sm border-buttom" (click)="manuselected('af')">
+                    <div class="menu-text-sm">Africa</div>
+                    <div class="menu-details-sm" *ngIf = "selectedMenu == 'af'">
+                        <div class="menu-list-items-sm" routerLink = "seychelles" (click)="hideMenu()">
+                            Seychelles
+                        </div>
+                    </div>
+                </div>
+                <div  class="menu-items-sm" routerLink = "about-me" (click)="hideMenu()">
+                    <div class="menu-text-sm">About me</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</header>
+<router-outlet></router-outlet>
+<footer class="footer">
+    <div class="foot-bar">
+        <div class="icons"><a href="https://www.facebook.com/minar.maiti/" target="_blank"><img src="assets/logos/facebook.svg"></a></div>
+        <div class="icons"><a href="https://www.instagram.com/minarmaiti/" target="_blank"><img src="assets/logos/instagram.svg"></a></div>
+        <div class="icons"><a href="https://twitter.com/minarmaiti" target="_blank" ><img src="assets/logos/twitter.svg"></a></div>
+        <div class="copy">&copy; 2021, Minar Maiti</div>
+        
+    </div>
+</footer>
+</div>

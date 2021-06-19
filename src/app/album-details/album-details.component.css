@@ -1,0 +1,170 @@
+.image {
+    border-radius: 2px;
+    overflow: hidden;
+    border: 2px solid #acacac;
+    position: relative;
+    cursor: pointer;
+    margin-top: 1em;
+}
+.image-hover {
+    z-index: 100;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .65);
+    display: none;
+}
+.image:hover {
+    border: 2px solid #fafafa;
+}
+
+.image:hover .image-hover {
+    display: flex;
+}
+
+.enlarge-button {
+    border: 2px solid #fafafa;
+    font-size: .9em;
+    /* font-weight: bold; */
+    margin: auto;
+    color: #fafafa;
+    padding: .1em .5em;
+}
+
+.modal-details{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, .65);
+    display: flex;
+    
+}
+
+.modal-area {
+    /* max-width: 720px; */
+    /* max-height: 100vh; */
+    background-color: #fff;
+    margin: auto;
+    border-radius: 3px;
+    border: 2px solid #cccccc;
+    position: relative;
+    cursor: pointer;
+}
+
+.modal-cover {
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    display: none;
+}
+
+.modal-area:hover .modal-cover {
+    display: flex;
+   
+}
+
+.close {
+    font-size: 1.2em;
+    color: #fafafa;
+    height: 1em;
+    margin: .2em .1em;
+}
+
+.left-arr {
+    border: 2px solid #fffefe;
+    height: 1.5em;
+    font-size: 3em;
+    color: #2c2c2c;
+    align-self: center;
+    padding: 0em .2em;
+    background-color: rgba(255, 255, 255,.45);
+}
+
+.right-ele {
+    display: flex;
+    margin-left: auto;
+    flex-direction: column;
+}
+
+.right-arr {
+    border: 2px solid #fffefe;
+    height: 1.5em;
+    font-size: 3em;
+    color: #2c2c2c;
+    align-self: center;
+    padding: 0em .2em;
+    margin: auto 0em;
+    background-color: rgba(255, 255, 255,.45);
+}
+
+.right-arr:hover, .left-arr:hover {
+    border: 2px solid #fafafa;
+    color: #1f1f1f;
+    background-color: rgba(255, 255, 255,.65);
+}
+
+.spacer {
+    height: 1em;
+}
+
+.album-details-block {
+    padding: 5em 2em 1em;
+}
+
+.load-more {
+    width: 100%;
+    margin-top: 1em;
+    font-size: 1.25em;
+    background-color: rgba(161, 161, 161, .2);
+    border: 1px solid #a5a5a5;
+    text-align: center;
+    cursor: pointer;
+}
+
+.img-details {
+    align-self: flex-end;
+    color: #fafafa;
+    margin: auto auto 1em auto;
+}
+
+.img-des {
+    text-align: center;
+    font-size: .9em;
+}
+
+.img-modal-loader {
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    display: flex;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+
+@media screen and (max-width: 767px) {
+    .album-details-block {
+        padding: 5em 0em 1em;
+    }
+
+    .modal-cover {
+        display: flex;
+    }
+
+    .img-details {
+        font-size: .8em;
+    }
+  }
+
+
+

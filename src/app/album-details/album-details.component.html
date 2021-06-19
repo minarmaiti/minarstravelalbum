@@ -1,0 +1,57 @@
+<div class="loader" *ngIf="noOfImageLoading > 0">
+    <div class="loader-icon">
+        <img src="assets/logos/album-logo.svg" style="width: 100%;">
+    </div>
+</div>
+<div class="album-details-block"  (window:resize)="calculateHeightAndWidth()">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="body-header">
+               {{pageHeading}}
+            </h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-2 col-md-3 col-sm-4 col-6" *ngFor="let img of images; let i=index">
+            <div class="image" (click)="imgClicked(img, i)">
+                <img  [src]="'assets/images/'+img.imgName" (load)="onLoad()" [alt]="img.imgName" width="100%">
+                <div class="image-hover">
+                    <div class="enlarge-button"> Enlarge Image</div>
+                </div>
+            </div>
+            <!-- <div class="img-des">{{img.description}}</div> -->
+        </div>
+    </div>
+    <div *ngIf="false" class=" d-block d-md-none">
+        <div *ngFor="let img of images; let i = index">
+            <div class="image" *ngIf="i <imageload">
+                <img  [src]="'assets/images/'+img.largeImgName" [alt]="img.largeImgName" width="100%">
+                <!-- <div class="image-hover">
+                    <div class="enlarge-button"> Enlarge Image</div>
+                </div> -->
+                
+            </div>
+            <!-- <div *ngIf="i <imageload" class="img-des">{{img.description}}</div> -->
+        </div>
+        <div class="load-more" *ngIf="images.length > imageload" (click) = "loadMore()"> Load more..</div>
+    </div>
+   
+</div>
+
+<div class="modal-details"  *ngIf="showModal" (click)="showModal = false">
+    <div class="modal-area" (click)="modalDetailsClick($event)" [ngStyle]="{'min-height': height+'px', 'min-width': width+'px'}">
+        <img  [src]="'assets/images/'+selectedImg.largeImgName" (load)="onImgLoad()" alt="img" [width]="width">
+        <div class="modal-cover">
+            <div class="left-arr" *ngIf="selectedIndex" (click)="nextImg($event,true)">&lt;</div>
+            <div class="img-details">Double tap on image or tap outside to close | Image resolution: 800 X 600</div>
+            <div class="right-arr" *ngIf="selectedIndex < images.length -1" (click)="nextImg($event, false)">&gt;</div>
+            
+        </div>
+        <div class="img-modal-loader" *ngIf="isImgLoading" >
+            <div class="loader-icon">
+                <img src="assets/logos/album-logo.svg" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>

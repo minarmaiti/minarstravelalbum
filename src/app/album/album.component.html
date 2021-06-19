@@ -1,0 +1,29 @@
+<div class="loader" *ngIf="noOfImageLoading > 0">
+    <div class="loader-icon">
+        <img src="assets/logos/album-logo.svg" style="width: 100%;">
+    </div>
+</div>
+<div class="album-block">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="body-header">
+               {{albumHeading}}
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-3 col-lg-4 col-sm-6" *ngFor="let album of albumDetails">
+            <div class="img-block"  [routerLink] = "[album.routerLink]">
+                <img  [src]="'assets/images/'+album.image" (load)="onLoad()" [alt]="album.image" width="100%">
+                <div class="img-cover">
+                    <div class="details-img">
+                        <div class="details-img-head">{{album.albumName}}</div>
+                        <div class="details-img-test">{{album.albumDetails}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

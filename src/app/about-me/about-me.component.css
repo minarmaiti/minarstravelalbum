@@ -1,0 +1,11 @@
+.my-img {
+    margin-top: 1.5em;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.my-details {
+    margin-top: 1.5em;
+}
